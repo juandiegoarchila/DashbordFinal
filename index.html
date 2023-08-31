@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/aaaaaaa.png" type="image/x-icon">
+    <link rel="stylesheet" href="/index.css">
+    <title>pro</title>
+</head>
+<body >
+    <header class="hola">
+        <div class="MenuTogle" ></div>
+    </header>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg: #333;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="checkmark-circle-outline"></ion-icon></div>
+                    <div class="text">QUANTIFY</div>
+                </a>
+            </li>
+        <div class="Menulist">
+            <li style="--bg:#ffa117;" class="active">
+                <a href="#">
+                    <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                    <div class="text">HOME</div>
+                </a>
+            </li>
+            <li style="--bg:#29b3bd;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
+                    <div class="text">PROFILE</div>
+                </a>
+            </li>
+            <li style="--bg:#0be633;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></div>
+                    <div class="text">INBOX</div>
+                </a>
+            </li>
+            <li style="--bg:#e41aab;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="stats-chart-outline"></ion-icon></div>
+                    <div class="text">ANALYTICS</div>
+                </a>
+            </li>
+            <li style="--bg:#e20e0e;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="calendar-outline"></ion-icon></div>
+                    <div class="text">CALENDAR</div>
+                </a>
+            </li>
+            <li style="--bg:#0011ff;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                    <div class="text">SETTINGS</div>
+                </a>
+            </li>
+            </div>
+            <div class="botoon">
+                <li style="--bg:#812076;">
+                    <a href="#">
+                        <div class="icon">
+                            <div class="imgBx">
+                                <img src="/yooooooo.jpg">
+                            </div>
+                        </div>
+                        <div class="text">Juan Diego</div>
+                    </a>
+                </li>
+            <li style="--bg:#c8d757;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="exit-outline"></ion-icon></div>
+                    <div class="text">LOGOUT</div>
+                </a>
+            </li>
+        </div>
+    </ul>
+</div>
+
+<div class="tuuu">
+<div class="form-container">
+    <h2>Calificación de Profesor</h2>
+    <form id="professor-form">
+        <!-- Preguntas de calificación -->
+        <div>
+            <label for="q1">Pregunta 1:</label>
+            <input type="number" id="q1" min="0" max="10">
+        </div>
+        <div>
+            <label for="q2">Pregunta 2:</label>
+            <input type="number" id="q2" min="0" max="10">
+        </div>
+        <div>
+            <label for="q3">Pregunta 3:</label>
+            <input type="number" id="q3" min="0" max="10">
+        </div>
+        <div>
+            <label for="q4">Pregunta 4:</label>
+            <input type="number" id="q4" min="0" max="10">
+        </div>
+        <div>
+            <label for="q5">Pregunta 5:</label>
+            <input type="number" id="q5" min="0" max="10">
+        </div>
+        <div>
+            <label for="q6">Pregunta 6:</label>
+            <input type="number" id="q6" min="0" max="10">
+        </div>
+        <div>
+            <label for="q7">Pregunta 7:</label>
+            <input type="number" id="q7" min="0" max="10">
+        </div>
+        <div>
+            <label for="q8">Pregunta 8:</label>
+            <input type="number" id="q8" min="0" max="10">
+        </div>
+        <div>
+            <label for="q9">Pregunta 9:</label>
+            <input type="number" id="q9" min="0" max="10">
+        </div>
+        <div>
+            <label for="q10">Pregunta 10:</label>
+            <input type="number" id="q10" min="0" max="10">
+        </div>
+        <button type="button" onclick="calcularCalificacion()">Calificar</button>
+    </form>
+</div>
+</div>
+
+
+
+    <!-- script iconos-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let MenuTogle = document.querySelector('.MenuTogle');
+        let sidebar = document.querySelector('.sidebar');
+        MenuTogle.onclick = function(){
+        MenuTogle.classList.toggle('active');
+        sidebar.classList.toggle('active')
+    }
+    
+    let Menulist = document.querySelectorAll('.Menulist li');
+    function activeLink(){
+        Menulist.forEach((item)=>
+        item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    Menulist.forEach((item)=>
+    item.addEventListener('click',activeLink))
+    </script>
+</body>
+</html>

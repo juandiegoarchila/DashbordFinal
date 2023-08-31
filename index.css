@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif'; 
+}
+.hola{
+    width: 100%;
+    height: 80px;
+    background: #e7ebed;
+    display: flex;
+  
+}
+
+:root{
+    --clr: #f8f3f9;
+}
+
+body{
+    
+    min-height: 100vh;
+    background: var(--clr);
+    
+}
+
+.sidebar{
+    position: absolute;
+    margin-top: -80px;
+    width: 80px;
+    height: 100vh;
+    background: #299be7;
+    transition: 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+    
+    
+}
+
+
+
+.sidebar.active{
+    width: 300px;
+}
+
+.sidebar ul{
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style: none;
+    
+
+}
+.sidebar ul li.active{
+    background-color: var(--clr);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.sidebar ul li.active::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+    background: transparent;
+}
+
+.sidebar ul li.active::after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px var(--clr);
+    background: transparent;
+    
+    
+}
+.sidebar ul li.logo{
+    margin-bottom: 50px;
+}
+
+.sidebar ul li.logo .icon{
+    font-size: 2em;
+    color: var(--clr);
+    
+}
+
+.sidebar ul li.logo .text{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+
+    
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+
+    
+}
+
+.sidebar ul li a .icon{
+    position: relative;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding-left: 1px;
+    height: 50px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+    margin-top: 5px;
+
+    
+}
+
+.sidebar ul li a .text{
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    text-transform: 0.05em;
+    transition: 0.5s;
+    margin-top: 4px;
+
+
+    
+}
+
+.sidebar ul li.active a .icon{
+    color: #fff;
+}
+
+.sidebar ul li.active a .text{
+    color: var(--bg)
+}
+
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text{
+    color: var(--bg);
+    
+    
+
+}
+
+.sidebar ul li.active a .icon::before{
+    content: "";
+    position: absolute;
+    inset: 5px;
+    width: 50px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+
+}
+
+.sidebar ul li:hover.active a .icon::before{
+    background: #fff;
+}
+.botoon{
+    position: absolute;
+    bottom: 0;
+    width: 100%;    
+}
+
+.lau{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.lau img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text1{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 80px;
+}
+.imgBx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.imgBx img{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.MenuTogle {
+    position: absolute;
+    width: 80px; /* Ancho inicial cuando está cerrado */
+    left: 80px; /* Mueve el menú fuera del área visible */
+    transition: 0.5s;
+}
+
+.MenuTogle.active {
+    width: 500px; /* Ancho cuando está abierto */
+    left: 50; /* Deja el menú en su lugar */
+}
+.MenuTogle{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MenuTogle::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #299be7;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #299be7;
+
+
+
+}
+.MenuTogle::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #299be7;
+    transform: translateY(9px);
+    transition: 0.5s;
+
+    
+
+}
+
+.MenuTogle.active::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+
+}
+
+.MenuTogle.active::after{
+    transform: translateY(0px) rotate(-45deg);
+    background: #299be7;
+
+}
+
+
+
+
+
+
+.tuuu {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo para el formulario */
+.form-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container input[type="number"] {
+    width: 40px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form-container button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para el contenedor de los gráficos */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el gráfico de barras */
+.bar-container {
+    width: 400px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bar-chart {
+    width: 100%;
+    height: 30px;
+    background-color: #f1f1f1;
+    position: relative;
+    border-radius: 9px;
+}
+
+/* Estilo para la barra de progreso */
+.progress-bar {
+    height: 100%;
+    background-color: #3498db;
+    width: 0;
+    transition: width 0.5s;
+    border-radius: 8px;
+}
+
+/* Estilo para mostrar el porcentaje en números */
+.percentage-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Estilo para el gráfico circular */
+.donut-container {
+    width: 200px;
+    height: 200px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.donut-chart {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #3498db calc(var(--calificacion) * 1%),
+        #f1f1f1 0%
+    );
+}
+
+/* Estilo para el texto del gráfico circular */
+.donut-text {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    line-height: 200px;
+}
+
+/* Estilo para la sección de calificaciones guardadas */
+.calificaciones-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.calificaciones-container h2 {
+    margin-bottom: 10px;
+}
+
+/* Estilo para la lista de calificaciones */
+#listaCalificaciones {
+    list-style: none;
+    padding: 0;
+}
+
+#listaCalificaciones li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Estilo para el botón de ver calificaciones */
+.view-button-container {
+    margin-top: 20px;
+}
+
+.view-button-container button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de eliminar calificación */
+.delete-button-container {
+    margin-top: 20px;
+}
+
+.delete-button-container button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para el campo de índice de calificación a eliminar */
+.delete-calificacion-container {
+    margin-top: 20px;
+}
+
+.delete-calificacion-container label {
+    font-weight: bold;
+}
+
+.delete-calificacion-container input[type="number"] {
+    width: 40px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+}
